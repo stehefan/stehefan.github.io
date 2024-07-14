@@ -120,19 +120,24 @@
 
         document.querySelector("#seconds").innerText = seconds;
 
-        if (initialDisplay === true || seconds === 0) {
+        const minuteChanges = seconds === 59;
+        const hourChanges = minuteChanges && minutes === 59;
+        const dayChanges = hourChanges && hours == 23;
+        const weekChanges = dayChanges && days === 6;
+
+        if (initialDisplay || minuteChanges) {
           document.querySelector("#minutes").innerText = minutes;
         }
-
-        if (initialDisplay === true || hours === 0) {
+        
+        if (initialDisplay || hourChanges) {
           document.querySelector("#hours").innerText = hours;
         }
 
-        if (initialDisplay === true || minutes === 0) {
+        if (initialDisplay || dayChanges) {
           document.querySelector("#days").innerText = days;
         }
 
-        if (initialDisplay === true || days === 0) {
+        if (initialDisplay || weekChanges) {
           document.querySelector("#weeks").innerText = weeks;
         }
       };
