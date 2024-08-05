@@ -95,13 +95,12 @@
       </div>
     </div>
     <script>
-      let initialDisplay = true;
-      const SECONDS_IN_A_WEEK = 60 * 60 * 24 * 7;
+const SECONDS_IN_A_WEEK = 60 * 60 * 24 * 7;
       const SECONDS_IN_A_DAY = 60 * 60 * 24;
       const SECONDS_IN_AN_HOUR = 60 * 60;
       const SECONDS_IN_A_MINUTE = 60;
 
-      const updateCountdown = () => {
+      const updateCountdown = (updateAll = false) => {
         const targetTime = new Date(2024, 7, 28, 15, 0, 0, 0);
         const now = new Date();
 
@@ -125,26 +124,31 @@
         const dayChanges = hourChanges && hours == 23;
         const weekChanges = dayChanges && days === 6;
 
-        if (initialDisplay || minuteChanges) {
+        if (updateAll || minuteChanges) {
           document.querySelector("#minutes").innerText = minutes;
         }
         
-        if (initialDisplay || hourChanges) {
+        if (updateAll || hourChanges) {
           document.querySelector("#hours").innerText = hours;
         }
 
-        if (initialDisplay || dayChanges) {
+        if (updateAll || dayChanges) {
           document.querySelector("#days").innerText = days;
         }
 
-        if (initialDisplay || weekChanges) {
+        if (updateAll || weekChanges) {
           document.querySelector("#weeks").innerText = weeks;
         }
       };
 
       setInterval(updateCountdown, 1000);
-      updateCountdown();
-      initialDisplay = false;
+      updateCountdown(true);
+
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) {
+          updateCountdown(true);
+        }
+      });
     </script>
   </body>
 </html>
