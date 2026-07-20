@@ -1,4 +1,4 @@
-## stefanlier.de
+## stehefan.github.io / stefanlier.de / stehefan.de
 
 Static personal site. Just HTML, CSS, and a tiny PostHog snippet — no framework, no build step.
 
