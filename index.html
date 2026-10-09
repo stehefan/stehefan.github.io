@@ -242,10 +242,12 @@
 
             @media (min-width: 521px) {
                 .grid {
-                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-columns: repeat(3, 1fr);
                 }
                 .c-name,
-                .c-portrait,
+                .c-portrait {
+                    grid-column: span 3;
+                }
                 .c-hamburg,
                 .c-role {
                     grid-column: span 2;
@@ -256,17 +258,21 @@
                 .c-hamburg .name .city {
                     font-size: clamp(2.4rem, 4.6vw, 3.8rem);
                 }
-                .big {
-                    max-width: 75%;
-                }
             }
             @media (min-width: 881px) {
                 .grid {
-                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-columns: repeat(6, 1fr);
                     grid-auto-rows: 168px;
+                }
+                .c-name,
+                .c-portrait {
+                    grid-column: span 3;
                 }
                 .c-hamburg,
                 .c-role {
+                    grid-column: span 4;
+                }
+                .c-link {
                     grid-column: span 2;
                 }
             }
@@ -279,7 +285,7 @@
                     <span class="eyebrow">Stefan Lier &middot; Hamburg</span>
                     <h1>Building teams<br />and software.</h1>
                     <p class="sub">
-                        Engineering manager who likes building teams as much as
+                        Head of Engineering who likes building teams as much as
                         building software.
                     </p>
                 </div>
@@ -299,17 +305,9 @@
                     />
                 </div>
 
-                <div class="card c-role">
-                    <div class="big">Engineering Manager @ Plancraft</div>
-                    <span class="small bottom">
-                        Helping the trades get out of paperwork and back on the
-                        tools.
-                    </span>
-                </div>
-
-                <a class="card c-link" href="mailto:stefan@stefanlier.de">
-                    <span class="label">Email</span>
-                    <span class="name">stefan@<br />stefanlier.de</span>
+                <a class="card c-link" href="https://github.com/stehefan">
+                    <span class="label">GitHub</span>
+                    <span class="name">@stehefan</span>
                     <svg
                         class="arrow"
                         viewBox="0 0 24 24"
@@ -338,36 +336,13 @@
                     </svg>
                 </a>
 
-                <a class="card c-link" href="https://github.com/stehefan">
-                    <span class="label">GitHub</span>
-                    <span class="name">@stehefan</span>
-                    <svg
-                        class="arrow"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path d="M7 17L17 7M9 7h8v8" />
-                    </svg>
-                </a>
-
-                <a
-                    class="card c-link"
-                    href="https://bsky.app/profile/stehefan.de"
-                >
-                    <span class="label">Bluesky</span>
-                    <span class="name">@stehefan.de</span>
-                    <svg
-                        class="arrow"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path d="M7 17L17 7M9 7h8v8" />
-                    </svg>
-                </a>
+                <div class="card c-role">
+                    <div class="big">Head of Engineering @ Plancraft</div>
+                    <span class="small bottom">
+                        Helping the trades get out of paperwork and back on the
+                        tools.
+                    </span>
+                </div>
             </div>
         </main>
     </body>
